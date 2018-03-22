@@ -15,7 +15,7 @@ node {
    
    // -- Descarga código desde SCM
    echo 'Descargando código de SCM'
-   bat 'echo "Hello World"'
+   
    
    checkout scm
    
