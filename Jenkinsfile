@@ -15,7 +15,7 @@ node {
    
    // -- Descarga código desde SCM
    echo 'Descargando código de SCM'
-   sh 'echo "Hello World"'
+   bat 'echo "Hello World"'
    bat 'DELTREE *'
    checkout scm
    
