@@ -15,12 +15,12 @@ node {
    
    // -- Descarga código desde SCM
    echo 'Descargando código de SCM'
-   bash 'rm -rf *'
+   sh 'rm -rf *'
    checkout scm
    
    // -- Compilando
    echo 'Compilando aplicación'
-   bash 'mvn clean compile'
+   sh 'mvn clean compile'
    
    // ------------------------------------
    // -- ETAPA: Test
@@ -28,7 +28,7 @@ node {
    stage 'Test'
    echo 'Ejecutando tests'
    try{
-      bash 'mvn verify'
+      sh 'mvn verify'
       step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
    }catch(err) {
       step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
@@ -42,7 +42,7 @@ node {
    // ------------------------------------
    stage 'Instalar'
    echo 'Instala el paquete generado en el repositorio maven'
-   bash 'mvn install -Dmaven.test.skip=true'
+   sh 'mvn install -Dmaven.test.skip=true'
    
    // ------------------------------------
    // -- ETAPA: Archivar
