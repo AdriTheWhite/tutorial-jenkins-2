@@ -3,15 +3,17 @@
 pipeline {
     agent any
     stages {
-        stage('Example') {
+        stage('Build') {
             steps {
-                echo 'Hello World'
+                echo 'Building'
+                
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
             }
         }
     }
     post { 
-        always { 
-            echo 'I will always say Hello again!'
+        failure { 
+            echo 'Ha habido un error :v'
         }
     }
 }
