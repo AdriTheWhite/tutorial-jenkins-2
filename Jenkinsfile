@@ -5,6 +5,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Configurando variables'
+            }
+            steps {
+                
                 echo bat 'javac -version'
                
             }
