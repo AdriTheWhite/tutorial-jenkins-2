@@ -7,7 +7,7 @@ pipeline {
                 echo 'Configurando variables'
            
                 
-                bat 'javac -version'
+                batch 'javac -version'
                
             }
         }
