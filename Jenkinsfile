@@ -14,7 +14,9 @@ pipeline {
                 
                 echo 'Compilando aplicación'
                 
-                bat 'mvn clen compile'
+                bat 'javac HolaController.java '
+                
+                bat 'mvn clean compile'
                
             }
         }
