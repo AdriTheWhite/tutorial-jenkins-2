@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Configurando variables'
+                def mvnHome = tool 'M3'
            
                 
                 bat 'java -version'
