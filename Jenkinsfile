@@ -5,11 +5,16 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Configurando variables'
-                echo "var mvnHome='${mvnHome}'"
-                echo "var env.PATH='${env.PATH}'"
+                
            
                 
                 bat 'java -version'
+                
+                checkout scm
+                
+                echo 'Compilando aplicación'
+                
+                bat 'mvn clen compile'
                
             }
         }
