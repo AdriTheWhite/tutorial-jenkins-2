@@ -3,18 +3,15 @@
 pipeline {
     agent any
     stages {
-        stage('Test') {
+        stage('Example') {
             steps {
-                bat 'make check'
+                echo 'Hello World'
             }
         }
     }
-    post {
-        always {
-            junit '**/target/*.xml'
-        }
-        failure {
-            mail to: aescriche@isoco.com, subject: 'The Pipeline failed :('
+    post { 
+        always { 
+            echo 'I will always say Hello again!'
         }
     }
 }
