@@ -2,39 +2,18 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Test') {
             steps {
-                echo 'Configurando variables'
-                
-           
-                
-                bat 'java -version'
-                
-                checkout scm
-                
-                echo 'Compilando aplicación'
-                
-                
-                
-                
-               
+                sh 'make check'
             }
         }
-        stage('Deploy') {
-            when {
-                branch 'master'
-            }
-            steps {
-                echo 'Deploying'
-            }
-        }
-        post {
+    }
+    post {
         always {
             junit '**/target/*.xml'
         }
         failure {
-            mail to: aescriche@isoco.com, subject: 'The Pipeline failed :('
+            mail to: team@example.com, subject: 'The Pipeline failed :('
         }
     }
-    
 }
