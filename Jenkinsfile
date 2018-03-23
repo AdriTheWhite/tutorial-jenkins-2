@@ -5,8 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Configurando variables'
-            }
-            steps {
+           
                 
                 bat 'javac -version'
                
@@ -14,7 +13,7 @@ pipeline {
         }
         stage('Deploy') {
             when {
-                branch 'production'
+                branch 'master'
             }
             steps {
                 echo 'Deploying'
