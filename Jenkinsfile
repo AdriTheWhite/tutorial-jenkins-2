@@ -8,7 +8,7 @@ pipeline {
             }
             steps {
                 
-                echo bat 'javac -version'
+                bat 'javac -version'
                
             }
         }
