@@ -13,7 +13,7 @@ pipeline {
             junit '**/target/*.xml'
         }
         failure {
-            mail to: team@example.com, subject: 'The Pipeline failed :('
+            mail to: aescriche@isoco.com, subject: 'The Pipeline failed :('
         }
     }
 }
