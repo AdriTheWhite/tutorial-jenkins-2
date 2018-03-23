@@ -36,5 +36,5 @@ pipeline {
             mail to: aescriche@isoco.com, subject: 'The Pipeline failed :('
         }
     }
-    }
+    
 }
